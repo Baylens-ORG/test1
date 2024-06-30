@@ -16,7 +16,7 @@ jobs:
       - name: Validate Jenkinsfile Line
         run: |
           # Check if the Jenkinsfile contains a specific line
-          if grep -q "your_specific_line_here" Jenkinsfile; then
+          if grep -q "()init" Jenkinsfile; then
             echo "Jenkinsfile contains the required line."
             exit 0  # Success exit code
           else
