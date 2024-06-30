@@ -1,0 +1,25 @@
+name: Validate Jenkinsfile Line
+
+on:
+  push:
+    branches:
+      - main  # Adjust branch name as needed
+
+jobs:
+  validate-jenkinsfile-line:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Validate Jenkinsfile Line
+        run: |
+          # Check if the Jenkinsfile contains a specific line
+          if grep -q "your_specific_line_here" Jenkinsfile; then
+            echo "Jenkinsfile contains the required line."
+            exit 0  # Success exit code
+          else
+            echo "Jenkinsfile is missing the required line."
+            exit 1  # Failure exit code
+          fi
