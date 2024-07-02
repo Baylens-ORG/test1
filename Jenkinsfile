@@ -1,6 +1,6 @@
 
 pipeline {
-    agent any 
+    agent { label 'baylens-node' }
     stages {
         stage('Stage 1') {
             steps {
