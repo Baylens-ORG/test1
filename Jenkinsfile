@@ -1,4 +1,4 @@
-init()
+
 pipeline {
     agent any 
     stages {
